@@ -1,5 +1,5 @@
 ## 上游仓库：[点击跳转](https://github.com/x-dr/telegraph-Image)
-<div align=center>
+
 
 > 旧版在[static](https://github.com/x-dr/telegraph-Image/tree/static)分支
 
