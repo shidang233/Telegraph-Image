@@ -37,3 +37,11 @@ jobs:
       - name: Clean untracked files, preserving .github directory
         run: |
           git clean -fdx -e .github
+
+      - name: Commit and push changes
+        run: |
+          git add README.md
+          git commit -m "Update" || echo "No changes to commit"
+          git push origin master --force
+
+          -d '{"ref": "main"}'
