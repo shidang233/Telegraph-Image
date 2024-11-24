@@ -14,12 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-# 此处没用（只是设置账号信息罢了不设置也行）
-      - name: Set up Git user
-        run: |
-          git config --local user.email "shidang233@outlook.com"
-          git config --local user.name "yunshuangqwq"
-
 # 添加上游信息
       - name: Add upstream repository
         run: git remote add upstream https://github.com/x-dr/telegraph-Image.git
