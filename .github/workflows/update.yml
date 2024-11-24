@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 使用访问令牌
+          token: ${{ secrets.GITHUB_TOKEN }}  # 使用GITHUB_TOKEN
 
       # 添加上游信息
       - name: Add upstream repository
@@ -40,6 +40,8 @@ jobs:
       # 给README.md一个更新让cf自动部署
       - name: Commit and push changes
         run: |
-          git add README.md README.md
+          git add README.md
           git commit -m "Update ck" || echo "No changes to commit"
           git push origin main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 在环境变量中设置GITHUB_TOKEN
