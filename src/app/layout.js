@@ -2,14 +2,15 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/ReactToastify.min.css';
+import 'react-photo-view/dist/react-photo-view.css';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "云霜的图床",
-  description: "云霜的图床",
+  title: "图床",
+  description: "图床",
 };
 
 
