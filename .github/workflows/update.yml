@@ -14,12 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-# 此处没用（只是设置账号信息罢了不设置也行）
-      - name: Set up Git user
-        run: |
-          git config --local user.email "shidang233@outlook.com"
-          git config --local user.name "yunshuangqwq"
-
 # 添加上游信息
       - name: Add upstream repository
         run: git remote add upstream https://github.com/x-dr/telegraph-Image.git
@@ -38,8 +32,16 @@ jobs:
         run: |
           git clean -fdx -e .github
 
+# 设置账号信息
+      - name: Set up Git user
+        run: |
+          git config --local user.email "shidang233@outlook.com"
+          git config --local user.name "yunshuangqwq"
+
 # 给README.md一个更新让cf自动部署
       - name: Commit and push changes
+       env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add README.md README.md
           git commit -m "Update ck" || echo "No changes to commit"
