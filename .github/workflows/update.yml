@@ -37,7 +37,8 @@ jobs:
         run: |
           git config --local user.email "shidang233@outlook.com"
           git config --local user.name "yunshuangqwq"
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # 给README.md一个更新让cf自动部署
       - name: Commit and push changes
