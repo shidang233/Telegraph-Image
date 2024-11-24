@@ -24,14 +24,14 @@ jobs:
       - name: Add upstream repository
         run: git remote add upstream https://github.com/x-dr/telegraph-Image.git
 
-#获取所有分支（若只更新指定的分支自己写）
+#获取所有分支信息
       - name: Fetch all upstream branches
         run: git fetch upstream
 
 # 检出上游仓库的更改并忽略.github文件夹（我是直接删除当前仓库的数据注意保留）然后更新合并   
       - name: Checkout upstream changes excluding .github
         run: |
-          git checkout upstream/master -- . 
+          git checkout upstream/main -- . 
           git reset -- .github
 
       - name: Clean untracked files, preserving .github directory
