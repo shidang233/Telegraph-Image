@@ -1,8 +1,8 @@
+# 此代码可应用与所有github项目（不包维护失效了自行更改代码）
+
 name: Sy-Update
 
 on:
-  schedule:
-    - cron: '0 0 * */60'
   workflow_dispatch:
 
 jobs:
@@ -14,12 +14,21 @@ jobs:
         with:
           fetch-depth: 0
 
+# 此处没用（只是设置账号信息罢了不设置也行）
+      - name: Set up Git user
+        run: |
+          git config --local user.email "shidang233@outlook.com"
+          git config --local user.name "yunshuangqwq"
+
+# 添加上游信息
       - name: Add upstream repository
         run: git remote add upstream https://github.com/x-dr/telegraph-Image.git
 
+#获取所有分支（若只更新指定的分支自己写）
       - name: Fetch all upstream branches
         run: git fetch upstream
 
+# 检出上游仓库的更改并忽略.github文件夹（我是直接删除当前仓库的数据注意保留）然后更新合并   
       - name: Checkout upstream changes excluding .github
         run: |
           git checkout upstream/master -- . 
