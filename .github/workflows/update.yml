@@ -41,7 +41,7 @@ jobs:
 # 给README.md一个更新让cf自动部署
       - name: Commit and push changes
         run: |
-          git add README.md /README.md
+          git add README.md README.md
           git commit -m "Update ck" || echo "No changes to commit"
           git push origin main --force
 
