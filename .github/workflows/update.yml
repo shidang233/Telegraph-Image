@@ -40,8 +40,7 @@ jobs:
       - name: Clear and update main README.md first line
         run: |
           sed -i '1d' README.md
-          echo -e "# telegraph-Image
-" | cat - README.md > temp && mv temp README.md
+          echo -e "# telegraph-Image" | cat - README.md > temp && mv temp README.md
           echo -e "## 上游仓库：[点击跳转](https://github.com/x-dr/telegraph-Image)" | cat - README.md > temp && mv temp README.md
 
       # 给README.md一个更新让cf自动部署
