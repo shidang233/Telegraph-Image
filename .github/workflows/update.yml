@@ -37,6 +37,12 @@ jobs:
           git config --local user.email "shidang233@outlook.com"
           git config --local user.name "yunshuangqwq"
 
+      - name: Clear and update main README.md first line
+        run: |
+          sed -i '1d' README.md
+          echo -e "<div align="center">" | cat - README.md > temp && mv temp README.md
+          echo -e "## 上游仓库：[点击跳转]()" | cat - README.md > temp && mv temp README.md
+
       # 给README.md一个更新让cf自动部署
       - name: Commit and push changes
         run: |
