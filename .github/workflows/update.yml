@@ -44,7 +44,7 @@ jobs:
           git add README.md README.md
           git commit -m "Update ck" || echo "No changes to commit"
           git push origin main --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           -d '{"ref": "main"}'
+         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
