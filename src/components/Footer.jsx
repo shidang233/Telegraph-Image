@@ -17,7 +17,7 @@ export default function Footer() {
         <p style={{ color: 'red', fontSize: '1rem', marginBottom: '0.1rem', marginTop: '0.1rem' }}>
           友情链接：
           <Link 
-            href="http;//jzrxh.work"
+            href="http//jzrxh.work"
             style={{ color: 'red', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem' }} // 调整字体大小
             target="_blank"
             rel="noopener noreferrer"
